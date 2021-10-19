@@ -11,24 +11,25 @@ X or O?                   Player O, please Enter your names:
 
 
 ********The interface*********
-         |     |
-      1  |  2  |  3
-    _____|_____|_____
-         |     |
-      4  |  5  |  6
-    _____|_____|_____
-         |     |
-      7  |  8  |  9
-         |     |
+           |       |
+       1   |   2   |   3
+    _______|_______|_______
+           |       |
+       4   |   5   |   6
+    _______|_______|_______
+           |       |
+       7   |   8   |   9
+           |       |
 
 
-        Statement
-==========================
- (Player name): (Points)
- (Player name): (Points)
-==========================
-  [R]Restart    [X]Exit
-  [L]Records
+           Statement
+==++++++========================
+    (Player name): (Points)
+    (Player name): (Points)
+================================
+    [R]Restart      [X]Exit
+    [L]Records
+
 
 
             - By hitting numbers 1 to 9 They should be replaced by X or O
