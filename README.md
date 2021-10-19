@@ -1,3 +1,4 @@
 # G-terminal
-Games for command line and terminal linux.\
-Including Tic-Tac-Toe
+Command line games.\
+Created with the C programming language for educational purposes.\
+Including: Tic-Tac-Toe
