@@ -23,7 +23,7 @@ X or O?                   Player O, please Enter your names:
 
 
            Statement
-==++++++========================
+================================
     (Player name): (Points)
     (Player name): (Points)
 ================================
