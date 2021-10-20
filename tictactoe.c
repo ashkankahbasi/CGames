@@ -1,20 +1,101 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
-char set_ttt(void) {
+/* replaces the propers numbers in the grid */
+void placenumbers(char game[]);
+void set_game(int n);
+
+void tictactoe(void) {
+
     extern char game[];
-    char cells, width, height;
+    set_game(3);
+    replacenum();
+    printf("%s", game);
 
-    cells = 9;
-    width = 7;
-    height = 3;
 
-    for (int loaded_height = 0; loaded_height < height; loaded_height++){
-        for (int loaded_cells = 0; loaded_cells < cells; loaded_cells++) {
-            for (int loaded_width = 0; loaded_width <= width; loaded_width++)
-                strcat(game, (loaded_width < width)? " " : "|");
+}
+
+/* take a number for example 3, 4 or 5 and makes a grid accordingly */
+void set_game(int n) {
+
+    /* declarations */
+    extern char game[];
+    int rows, cols, height, blank, btmedge;
+
+    /* implementations */
+    if (n) {
+        /* the number of rows */
+        for (rows = 1; rows < n; rows++) {
+            /* the height of every portion */
+            for (height = 1; height < 3; height++) {
+                /* number of columns */
+                if (height == 2) { /* the number in the portions */
+                    for (cols = 0; cols < n; cols++) {
+                        if (cols == (n-1))
+                            strcat(game, "   N   ");
+                        else
+                            strcat(game, "   N   |");
+                    }
+                    strcat(game, "       \n");
+                } else {    /* the empty spaces around the numbers */
+                    for (blank = 1; blank < n; blank++) {
+                        strcat(game, "       |");
+                    }
+                    strcat(game, "       \n");
+                }
+            }
+            /* The bottom edge of every row */
+            for (btmedge = 1; btmedge < n; btmedge++) {
+                strcat(game, "_______|");
+            }
+            /* The bottom edge of the last column */
+            strcat(game, "_______\n");
         }
-        strcat(game, "\n");
+
+
+        /* the last row */
+        /* the height of the last row */
+        for (height = 0; height < 3; height++) {
+            /* number of columns of the last row*/
+            for (cols = 0; cols < n; cols++) {
+                if (cols == (n-1)) { /* the edges of the last row and column */
+                    if (height == 1)
+                        strcat(game, "   N   ");
+                    else
+                        strcat(game, "       ");
+                } else { /* the edges of the last row */
+                    if (height == 1)
+                        strcat(game, "   N   |");
+                    else
+                        strcat(game, "       |");
+                }
+
+            }
+            strcat(game, "       \n");
+        }
+    }
+    strcat(game, "\n\n\n");
+    strcat(game, "Statement           \n");
+    strcat(game, "============================\n");
+    strcat(game, "(Player name): (Points)     \n");
+    strcat(game, "(Player name): (Points)     \n");
+    strcat(game, "============================\n");
+    strcat(game, "[R]Restart      [X]Exit     \n");
+    strcat(game, "[L]Records                  \n");
+}
+
+void replacenum(void)
+{
+    extern char game[];
+    char numsymbol, num;
+
+    numsymbol = 'N';
+    num = '1';
+    for (int i = 0;game[i] != '\0'; i++){
+        if (game[i] == 'N') {
+            game[i] = num++;
+        }
     }
 }
 
@@ -50,8 +131,6 @@ X or O?                   Player O, please Enter your names:
     [R]Restart      [X]Exit
     [L]Records
 
-
-
             - By hitting numbers 1 to 9 They should be replaced by X or O
             - The player who gets these numbers, wins:
             123 - 456 - 789 - 741 - 852 -963 -753 - 951
@@ -82,3 +161,4 @@ Reza Kahba..  65            10/19/2021
                 [B]Back
 
 */
+
