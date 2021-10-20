@@ -1,3 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+char set_ttt(void) {
+    extern char game[];
+    char cells, width, height;
+
+    cells = 9;
+    width = 7;
+    height = 3;
+
+    for (int loaded_height = 0; loaded_height < height; loaded_height++){
+        for (int loaded_cells = 0; loaded_cells < cells; loaded_cells++) {
+            for (int loaded_width = 0; loaded_width <= width; loaded_width++)
+                strcat(game, (loaded_width < width)? " " : "|");
+        }
+        strcat(game, "\n");
+    }
+}
+
 /*
 ********Questions before starting the game*********
 Single player or multi player?
