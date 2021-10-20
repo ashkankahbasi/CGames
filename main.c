@@ -1,8 +1,10 @@
 #include <stdio.h>
 
+char game[50] = "";
+
 int main()
 {
-    printf("Hello world!\n");
+    tictactoe();
     return 0;
 
     /*
