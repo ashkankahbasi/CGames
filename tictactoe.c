@@ -5,15 +5,21 @@
 /* replaces the propers numbers in the grid */
 void placenumbers(char game[]);
 void set_game(int n);
+void replace_XO(char c);
+int game_on(void);
 
 void tictactoe(void) {
 
     extern char game[];
+    char c;
     set_game(3);
     replacenum();
     printf("%s", game);
-
-
+    while (game_on()) {
+        if (isdigit(c = getchar())) {
+            replace_XO(c);
+        }
+    }
 }
 
 /* take a number for example 3, 4 or 5 and makes a grid accordingly */
@@ -99,6 +105,32 @@ void replacenum(void)
     }
 }
 
+void replace_XO(char c)
+{
+    extern char game[];
+
+    for (int i = 0;game[i] != '='; i++){
+        if (game[i] == c) {
+            game[i] = 'X';
+            system("cls");
+            printf("%s", game);
+        }
+    }
+}
+
+int game_on(void)
+{
+    extern char game[];
+
+    for (int i = 0; game[i] != '='; i++){
+        if (!isdigit(game[i])) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+}
+
 /*
 ********Questions before starting the game*********
 Single player or multi player?
@@ -161,4 +193,3 @@ Reza Kahba..  65            10/19/2021
                 [B]Back
 
 */
-
