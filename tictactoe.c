@@ -7,6 +7,9 @@ void placenumbers(char game[]);
 void set_game(int n);
 void replace_XO(char c);
 int game_on(void);
+int switchturn(void);
+
+int turn = 1;
 
 void tictactoe(void) {
 
@@ -111,10 +114,23 @@ void replace_XO(char c)
 
     for (int i = 0;game[i] != '='; i++){
         if (game[i] == c) {
-            game[i] = 'X';
+            game[i] = (switchturn()) ? 'X' : 'O';
             system("cls");
             printf("%s", game);
         }
+    }
+}
+
+int switchturn(void)
+{
+    extern int turn;
+
+    if (turn == 1) {
+        --turn;
+        return 1;
+    } else {
+        ++turn;
+        return 0;
     }
 }
 
@@ -132,6 +148,9 @@ int game_on(void)
 }
 
 /*
+                    OUTLINE
+
+
 ********Questions before starting the game*********
 Single player or multi player?
 ------------------------------------------------------------
