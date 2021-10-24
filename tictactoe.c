@@ -8,6 +8,7 @@ void set_game(int n);
 void replace_XO(char c);
 int game_on(void);
 int switchturn(void);
+void restart(void);
 
 int turn = 1;
 
@@ -141,16 +142,23 @@ int game_on(void)
     for (int i = 0; game[i] != '='; i++){
         if (!isdigit(game[i])) {
             return 1;
-        } else {
-            return 0;
+        }
+    }
+}
+
+void restart(void)
+{
+    extern char game[];
+    char num;
+    num = '1';
+    for (int i = 0;game[i] != '='; i++){
+        if (game[i] == 'X' || 'O') {
+            game[i] = num++;
         }
     }
 }
 
 /*
-                    OUTLINE
-
-
 ********Questions before starting the game*********
 Single player or multi player?
 ------------------------------------------------------------
