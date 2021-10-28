@@ -24,6 +24,7 @@ void tictactoe(void) {
             replace_XO(c);
         }
     }
+    restart();
 }
 
 /* take a number for example 3, 4 or 5 and makes a grid accordingly */
@@ -151,13 +152,17 @@ int game_on(void)
 void restart(void)
 {
     extern char game[];
-    char num;
+    char num, c;
     num = '1';
-    for (int i = 0;game[i] != '='; i++){
-        if (game[i] == 'X' || 'O') {
+    for (int i = 0; game[i] != '='; i++){
+        if (game[i] == 'X') {
+            game[i] = num++;
+        } else if (game[i] == 'O') {
             game[i] = num++;
         }
     }
+    system("cls");
+    printf("%s", game);
 }
 
 /*
