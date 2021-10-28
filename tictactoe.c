@@ -138,12 +138,14 @@ int switchturn(void)
 int game_on(void)
 {
     extern char game[];
+    char status = 0;
 
     for (int i = 0; game[i] != '='; i++){
-        if (!isdigit(game[i])) {
-            return 1;
+        if (isdigit(game[i])) {
+            status += 1;
         }
     }
+    return status;
 }
 
 void restart(void)
