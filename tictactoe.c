@@ -19,12 +19,14 @@ void tictactoe(void) {
     set_game(3);
     replacenum();
     printf("%s", game);
-    while (game_on()) {
-        if (isdigit(c = getchar())) {
-            replace_XO(c);
+    while (1) {
+        while (game_on()) {
+            if (isdigit(c = getchar())) {
+                replace_XO(c);
+            }
         }
+        restart();
     }
-    restart();
 }
 
 /* take a number for example 3, 4 or 5 and makes a grid accordingly */
