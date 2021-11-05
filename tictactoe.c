@@ -184,13 +184,21 @@ void checkwinner(char c)
     char winner[3][3] = {
         {'1', '2', '3'},
         {'4', '5', '6'},
-        {'7', '8', '9'}
-        
+        {'7', '8', '9'},
+
         --> THESE ARE THE WINNERS: 123 - 456 - 789 - 741 - 852 -963 -753 - 951 <--
     }
 
-    if(c == winner) {
-        return "X won";
+    if (turn == 'X')
+        x_entries[i] = c;
+    else
+        o_entries[i] = c;
+
+    for (char i = 0; i < 5; i++) {
+        if (x_entries == winner)
+            return "X won";
+        if (o_entries == winner)
+            return "O won";
     }
 }
 
