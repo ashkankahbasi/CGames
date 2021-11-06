@@ -181,6 +181,8 @@ void checkwinner(char c)
     extern char game[];
     char x_entries[];
     char o_entries[];
+    static char x_i=0;
+    static char o_i=0;
     char winner[3][3] = {
         {'1', '2', '3'},
         {'4', '5', '6'},
@@ -189,17 +191,31 @@ void checkwinner(char c)
         --> THESE ARE THE WINNERS: 123 - 456 - 789 - 741 - 852 -963 -753 - 951 <--
     }
 
-    if (turn == 'X')
-        x_entries[i] = c;
-    else
-        o_entries[i] = c;
+    if (turn == 1)
+        x_entries[x_i++] = c;
+    else if (turn == 0)
+        o_entries[o_i++] = c;
 
     for (char i = 0; i < 5; i++) {
-        if (x_entries == winner)
+        if (compare(x_entries[], winner)) {
+            x_i = 0;
             return "X won";
-        if (o_entries == winner)
+        }
+        if (compare(x_entries[], winner)) {
+            o_i = 0;
             return "O won";
+        }
     }
+}
+
+char compare(arr[], arr[])
+{
+    char match = 0;
+    for (char i = 0; i < arr-1; i++)
+        if (found(entries, pattern))
+            return match;
+        else
+            return match;
 }
 
 */
