@@ -1,7 +1,6 @@
-# G-terminal
-Command line games.\
-Created with the C programming language for practice.\
+# CGames
+Command line games written in  C programming language.\
 As a personal project to learn programming in C.\
 ================================================\
-LIST OF GAMES:\
+GAME LIST:\
 Tic-Tac-Toe
