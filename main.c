@@ -87,80 +87,128 @@ int main()
     } */
 
     /* Taking input */
-    int input, k, i, j, turn = 1;
+    int input, k, i, j, turn = 1, c;
     k = 0;
     while (k < 9) {
 
         /* Winning conditions for player1 */
         /* horizontal */
         if (player1[0][1] != 0 && player1[0][2] != 0 && player1[0][3] != 0) {
-            printf("player1 Won the game!\n");
+            printf("player1 Won the game!\n\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player1[1][1] != 0 && player1[1][2] != 0 && player1[1][3] != 0) {
             printf("player1 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player1[2][1] != 0 && player1[2][2] != 0 && player1[2][3] != 0) {
             printf("player1 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         /* cross */
         if (player1[0][1] != 0 && player1[1][2] != 0 && player1[2][3] != 0) {
             printf("player1 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player1[2][1] != 0 && player1[1][2] != 0 && player1[0][3] != 0) {
             printf("player1 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         /* vertical */
         if (player1[0][1] != 0 && player1[1][1] != 0 && player1[2][1] != 0) {
             printf("player1 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player1[0][2] != 0 && player1[1][2] != 0 && player1[2][2] != 0) {
             printf("player1 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player1[0][3] != 0 && player1[1][3] != 0 && player1[2][3] != 0) {
             printf("player1 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         /* Winning conditions for player2 */
         /* horizontal */
         if (player2[0][1] != 0 && player2[0][2] != 0 && player2[0][3] != 0) {
             printf("player2 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player2[1][1] != 0 && player2[1][2] != 0 && player2[1][3] != 0) {
             printf("player2 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player2[2][1] != 0 && player2[2][2] != 0 && player2[2][3] != 0) {
             printf("player2 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         /* cross */
         if (player2[0][1] != 0 && player2[1][2] != 0 && player2[2][3] != 0) {
             printf("player2 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player2[2][1] != 0 && player2[1][2] != 0 && player2[0][3] != 0) {
             printf("player2 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         /* vertical */
         if (player2[0][1] != 0 && player2[1][1] != 0 && player2[2][1] != 0) {
             printf("player2 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player2[0][2] != 0 && player2[1][2] != 0 && player2[2][2] != 0) {
             printf("player2 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
         if (player2[0][3] != 0 && player2[1][3] != 0 && player2[2][3] != 0) {
             printf("player2 Won the game!\n");
+            printf("Press ENTER to close the program...\n");
+            getchar();
+            getchar();
             return 0;
         }
 
